@@ -21,18 +21,22 @@ export const school = {
     6: new Student('Eugene', [97, 34, 78, 85, 98, 65]),
     7: new Student('Ivan', [76, 89, 78, 98, 98, 99, 89, 96]),
   },
-  aGradeStudents(){
+  get aGradeStudents(){
     return this.students.filter(stud => {return stud.averageGrade >= 90});
   },
-  bGradeStudents(){
+  get bGradeStudents(){
     return this.students.filter(stud => {return stud.averageGrade >= 75 && stud.averageGrade <= 89});
   },
-  cGradeStudents(){
+  get cGradeStudents(){
     return this.students.filter(stud => {return stud.averageGrade >= 60 && stud.averageGrade < 75});
   },
-  dGradeStudents(){
+  get dGradeStudents(){
     return this.students.filter(stud => {return stud.averageGrade <= 59});
   },
 };
+
+// git add .
+//   git commit -m "init"
+// git push
 
 
