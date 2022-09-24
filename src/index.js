@@ -9,6 +9,7 @@ function Student(name, grades) {
   });
 }
 
+
 export const school = {
   students: {
     0: new Student('Maria', [45, 76, 45, 98, 90, 87, 56]),
