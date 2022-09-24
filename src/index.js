@@ -21,16 +21,18 @@ export const school = {
     6: new Student('Eugene', [97, 34, 78, 85, 98, 65]),
     7: new Student('Ivan', [76, 89, 78, 98, 98, 99, 89, 96]),
   },
-  get aGradeStudents(){
+  aGradeStudents(){
     return this.students.filter(stud => {return stud.averageGrade >= 90});
   },
-  get bGradeStudents(){
+  bGradeStudents(){
     return this.students.filter(stud => {return stud.averageGrade >= 75 && stud.averageGrade <= 89});
   },
-  get cGradeStudents(){
+  cGradeStudents(){
     return this.students.filter(stud => {return stud.averageGrade >= 60 && stud.averageGrade < 75});
   },
-  get dGradeStudents(){
+  dGradeStudents(){
     return this.students.filter(stud => {return stud.averageGrade <= 59});
   },
 };
+
+
