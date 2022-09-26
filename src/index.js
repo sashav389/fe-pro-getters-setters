@@ -4,6 +4,7 @@ function Student(name, grades) {
 
   Object.defineProperty(this, 'averageGrade', {
     get() {
+      //return this.grades[1];
       return this.grades.reduce((acc, curr) => acc + curr) / this.grades.length;
     },
   });
@@ -21,19 +22,30 @@ export const school = {
     6: new Student('Eugene', [97, 34, 78, 85, 98, 65]),
     7: new Student('Ivan', [76, 89, 78, 98, 98, 99, 89, 96]),
   },
+  getArrInRange(min, max){
+    return Object.values(this.students).filter(stud => {return stud.averageGrade >= min && stud.averageGrade <= max})
+      .map(stud => {return stud.name}).join(", ")
+  },
   get aGradeStudents(){
-    return this.students.filter(stud => {return stud.averageGrade >= 90});
+    return this.getArrInRange(90, 100);
   },
   get bGradeStudents(){
-    return this.students.filter(stud => {return stud.averageGrade >= 75 && stud.averageGrade <= 89});
+    //return this.students.filter(stud => {return stud.averageGrade() >= 75 && stud.averageGrade <= 89});
+    return this.getArrInRange(75, 89);
   },
   get cGradeStudents(){
-    return this.students.filter(stud => {return stud.averageGrade >= 60 && stud.averageGrade < 75});
+    //return this.students.filter(stud => {return stud.averageGrade >= 60 && stud.averageGrade < 75});
+    return this.getArrInRange(60, 74);
   },
   get dGradeStudents(){
-    return this.students.filter(stud => {return stud.averageGrade <= 59});
+    //return this.students.filter(stud => {return stud.averageGrade <= 59});
+    return this.getArrInRange(0, 59);
   },
 };
+
+
+
+
 
 // git add .
 //   git commit -m "init"
